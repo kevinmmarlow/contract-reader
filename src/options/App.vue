@@ -13,7 +13,7 @@ export default {
 
 <style>
 html {
-  width: 400px;
-  height: 400px;
+  width: 357px;
+  height: 600px;
 }
 </style>
