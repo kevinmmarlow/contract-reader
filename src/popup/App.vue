@@ -1,7 +1,5 @@
 <template>
-  <div
-    class="pb-6 mx-auto bg-white flex flex-col justify-center divide-y divide-gray-100"
-  >
+  <div class="h-screen mx-auto bg-white flex flex-col">
     <div class="px-16 bg-gray-50">
       <div class="mt-4 mb-2 mx-auto flex space-x-6 align-center">
         <div class="flex-shrink-0">
@@ -86,6 +84,12 @@
         </p>
       </div>
     </div>
+    <div class="flex-grow"></div>
+    <div class="p-6 flex align-center justify-center">
+      <button class="btn btn-blue" @click.prevent="openOptions">
+        Settings
+      </button>
+    </div>
   </div>
 </template>
 
@@ -98,6 +102,15 @@ export default {
     return {
       logo: image,
     }
+  },
+  methods: {
+    openOptions() {
+      if (chrome.runtime.openOptionsPage) {
+        chrome.runtime.openOptionsPage()
+      } else {
+        window.open(chrome.runtime.getURL('options.html'))
+      }
+    },
   },
 }
 </script>
