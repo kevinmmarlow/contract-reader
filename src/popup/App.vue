@@ -90,7 +90,7 @@
 </template>
 
 <script>
-import image from '@/assets/patent.svg'
+import image from '@/assets/patent_2.svg'
 
 export default {
   name: 'App',
